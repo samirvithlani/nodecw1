@@ -34,7 +34,19 @@ app.get("/test2",(req,res)=>{
         data:users
     })
 })
+//localhost:3000/test3/101
+app.get("/test3/:id",(req,res)=>{
 
+    var id = req.params.id;
+    console.log("id is",id);
+    res.status(201).json({
+        message:"data fetched successfully",
+        id:id
+    })
+    
+})
+
+//user --> 101
 
 
 mongoose.connect("mongodb://127.0.0.1:27017/cw1", {
