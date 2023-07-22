@@ -1,0 +1,15 @@
+api -> application prog interface
+
+--> 2 
+
+rest api --> json, protocol free
+soap api --> xml,  protocol based
+
+get post
+
+request method
+get --> read
+post --> create
+put --> update
+delete --> delete
+patch --> partial update
