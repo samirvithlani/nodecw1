@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const userSchema = require("./model/UserModel");
 
 const PORT = 3000;
 
@@ -45,6 +46,29 @@ app.get("/test3/:id",(req,res)=>{
     })
     
 })
+
+app.get("/users",(req,res)=>{
+
+    //users.find()
+    userSchema.find().then((data)=>{
+
+        res.status(200).json({
+            users:data,
+            message:"data fetched successfully"
+        })
+
+    }).catch((err)=>{
+
+        res.status(500).json({
+            message:"error",
+            error:err
+        })
+
+    })
+
+})
+
+
 
 //user --> 101
 
