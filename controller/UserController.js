@@ -1,4 +1,70 @@
+const { aggregate } = require("../model/UserModel");
 const userSchema = require("../model/UserModel");
+const passwordUtil = require("../util/PasswordUtil");
+
+
+
+const loginUser = async(req,res)=>{
+
+
+    //select * from users where email = "" and password = ""
+    var Uemail = req.body.email;
+    var Upassword = req.body.password;
+
+    const user = await userSchema.findOne({email:Uemail,password:Upassword});
+    console.log(user);
+    if(user){
+        res.status(200).json({
+            message:"login success",
+            data:user
+        })
+    }
+    else{
+        res.status(404).json({
+            message:"invalid credentials"
+        })
+    }
+
+
+
+}
+
+
+
+const loginWithEcn = async(req,res)=>{
+
+
+    var email = req.body.email;
+    var password = req.body.password;
+
+    //dhiraj1@gmail.com
+    const userObj = await userSchema.findOne({email:email});
+    console.log(userObj);
+    if(userObj){
+
+            if(await passwordUtil.comparePassword(password,userObj.password)){
+                res.status(200).json({
+                    message:"login success",
+                    data:userObj
+                })
+            }
+            else{
+                res.status(404).json({
+                    message:"invalid credentials"
+                })
+            }
+
+    }
+    else{
+        res.status(404).json({
+            message:"invalid credentials"
+        })
+    }
+
+
+
+
+}
 
 const getUsers = (req, res) => {
 
@@ -21,6 +87,33 @@ const addUser = (req,res)=>{
 
     // form , req.body,params
     const user = new userSchema(req.body);
+    user.save().then((data)=>{
+        res.status(201).json({
+            message:"user added",
+            data:data
+        })
+    }).catch((err)=>{
+        res.status(500).json({
+            message:"error",
+            error:err
+        })
+    })
+    
+
+}
+
+
+const addUserwithEnc = async(req,res)=>{
+
+    // form , req.body,params
+    //const user = new userSchema(req.body);
+    const userObj = {
+        name:req.body.name,
+        email:req.body.email,
+        password:await passwordUtil.encryptPassword(req.body.password),
+        age:req.body.age
+    }
+    const user = new userSchema(userObj);
     user.save().then((data)=>{
         res.status(201).json({
             message:"user added",
@@ -105,5 +198,8 @@ module.exports = {
     getUsers,
     addUser,
     deleteUser,
-    updateUser
+    updateUser,
+    loginUser,
+    addUserwithEnc,
+    loginWithEcn
 }
