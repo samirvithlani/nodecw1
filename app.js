@@ -9,9 +9,11 @@ app.use(express.json());
 const userRoutes = require("./routes/UserRoutes");
 const categoryRoutes = require("./routes/CategoryRoutes");
 const productRoutes = require("./routes/ProductRoutes");
+const fileUploadRoutes = require("./routes/FileUploadRoutes");
 app.use('/user',userRoutes);
 app.use('/category',categoryRoutes);
 app.use('/product',productRoutes);
+app.use('/file',fileUploadRoutes);
 
 mongoose.connect("mongodb://127.0.0.1:27017/cw1", {
   useNewUrlParser: true,
