@@ -54,4 +54,13 @@ const uploadFile = async (req, res) => {
   });
 };
 
-module.exports = { uploadFile };
+const getAllFileFromGoogleDrive = async (req, res) => {
+  const files = await googlecontroller.getAllFileFromGoogleDrive();
+  if (files != undefined || files != null) {
+    res.status(200).json({ message: "Files retrieved successfully", files });
+  } else {
+    res.status(400).json({ message: "Files not retrieved" });
+  }
+};
+
+module.exports = { uploadFile, getAllFileFromGoogleDrive };
