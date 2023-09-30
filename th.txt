@@ -79,4 +79,11 @@ app.get("/users",(req,res)=>{
 restrict api count to 5 
 
 429 status code
+
+
+authentication: -> authentication provides you the identity of the user
+
+authorization : -> authorization provides you the access of the user
+
+token :-> JWT token json web token
  

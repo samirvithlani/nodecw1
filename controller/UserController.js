@@ -1,6 +1,7 @@
 const { aggregate } = require("../model/UserModel");
 const userSchema = require("../model/UserModel");
 const passwordUtil = require("../util/PasswordUtil");
+const tokenUtil = require("../util/TokenUtil");
 
 
 
@@ -114,10 +115,11 @@ const addUserwithEnc = async(req,res)=>{
         age:req.body.age
     }
     const user = new userSchema(userObj);
+    var token = tokenUtil.generateToken(user.toObject());
     user.save().then((data)=>{
         res.status(201).json({
             message:"user added",
-            data:data
+            data:token
         })
     }).catch((err)=>{
         res.status(500).json({

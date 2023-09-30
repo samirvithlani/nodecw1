@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "sonic-potion-372318",
+  "private_key_id": "98d17c9397c49a4879c0a9ab70d1c131c8a539ef",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQCe5FtroZz3Ytlw\n4nd5lZ8QyasOsem/hBvmCQwSbt149uIwih5CErZ/JPucxwgGoOEcRBs/0YA93GZ+\nmbYdJaQT0qVl7MBLWmWx3RceURnsikMwM9JFP++yEN3qbfAsBCgR8gG2TDY07VOi\n4Az5Q/CM3d2eC6X7YRZ6913vBtSm3oquqdkbzx61Nxj0NhiCxSZIFQWIBucN+UHJ\nUHF5Xyr1Exwm03tKUzbe6dcLVibalSMGJRDI/pSo2k3+zwEy3XD8R5scA6kBkYDo\nsIFaO+mk0OvnaV78sAduYeDusrHs8ZhH13obN7cwO2c/R2SsFZNxV0rojcH7C9Wm\niaebo/StAgMBAAECgf800JfJUaSKgZ2ZS+h5aYjNHZPSXEaHqK6luE1z36+OF6gN\nSh7sieDNtEwDdZIU3Lbh6BmxJlPAmJYlLP1F0nK2jQO7DswXGkHGRUTiocktggr7\nKftjv+yZ6IFdWWZqBI7Cr6EOIFnw7AMBeetcXM7x0aO2Go/s0/2CVaAXANL4ET4B\nxzSJVHZr56tTSJ8ILwpLrt0cQ2z/xYfOPRt5Nvlv3tzJQrJvF3Rtn5A3S1mmmqeC\nAd3vSl8o1nHGcwuA5NL3aJMUaUuqET+U/EFjqByQR94gIvq8qFc/HdBtmn6jfbxZ\nkGfIhqxdnQqcpvxrP6On0vlHCvuRbAMD11Sk2okCgYEAzQkOWrMvKh58zIBfWJ6F\nl5E8mCMqEmpEPw8WDHp31fTzdeVMkmw16fdsuTXD4/gyXxdHRTcnbuKdFhb1JcJr\n/XRxAHj8+ggmniz5ejh6HGu66IrrzvP51kVUi3rDInGrOI0bWN81JJFHsB0v7CdB\nwAh/BMnwwu89i0TncN9rkJkCgYEAxmMTv1oOcbFzMSPZrBcKjqP/9SK9G840jtGP\nRk9fNaVdADjlauC/bKeuqF9gTL2PHAY5xMpK6cfgurdh0IibxHahFMjrr9gVa6LP\nB5U6vYfNPad3XZd1b+xI3Q43rKPeoNChXvvt9wBhkXEPP4n6bWYkzzcWOjo3ygwQ\nj06JTTUCgYAv2RMue25gR+kb2EFn7uaCLnSTlHE3BvGSPbUJiHL6zUUbmD08VmBm\nj0UiG7fxNXSb2FTbhDmBmQTLqOPgwfRtm4TbdWCkAM7yTtCRgyiMBWAC8JiDHVCK\nfndybV2oZhptAhEFtmEyfWzbXpRWafrgE5uAxJeZBje4joXsQ1dY0QKBgAbHFcKg\n0gOCW3wfTG17sAmlgrYeRLWxeswyTqHJTmhnyOCcEQJwwTl2FRp9f62/gCcl801M\n1/hassvOPhJAyImSv/gU0TCFwl2WB1qr94DIJfPoR8SzyvhS6z5aIP7N7moyFoFH\nPB8HLU4pvaqfDSY1qiZGLIU6vfMyLFKpDTnNAoGBAIa+KrvihjiivSj6NHF/rxgm\nyW0XV2hcFT5NYm1lw7nATHM1Gefuwi7dFgqtBENhrL8iclP+AELkJJ718fDrlcip\ntyBYH2YO02wAG3T6xUh5U4EYXJEf8Zhv8ZQ984+wvvfcfC3wJZgn8/7+Gw0lrH3b\nilnlXDjarNh50Y9s32ot\n-----END PRIVATE KEY-----\n",
+  "client_email": "drivetest@sonic-potion-372318.iam.gserviceaccount.com",
+  "client_id": "101376675195884311028",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/drivetest%40sonic-potion-372318.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
