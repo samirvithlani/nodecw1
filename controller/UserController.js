@@ -41,12 +41,14 @@ const loginWithEcn = async(req,res)=>{
     //dhiraj1@gmail.com
     const userObj = await userSchema.findOne({email:email});
     console.log(userObj);
+    const token = tokenUtil.generateToken(userObj.toObject());
+    console.log(token);
     if(userObj){
 
             if(await passwordUtil.comparePassword(password,userObj.password)){
                 res.status(200).json({
                     message:"login success",
-                    data:userObj
+                    data:token
                 })
             }
             else{

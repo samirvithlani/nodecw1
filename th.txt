@@ -86,4 +86,8 @@ authentication: -> authentication provides you the identity of the user
 authorization : -> authorization provides you the access of the user
 
 token :-> JWT token json web token
+
+
+
+1 user can hit api 5 times  only... after that he will send payment required status code
  
