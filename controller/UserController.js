@@ -2,6 +2,7 @@ const { aggregate } = require("../model/UserModel");
 const userSchema = require("../model/UserModel");
 const passwordUtil = require("../util/PasswordUtil");
 const tokenUtil = require("../util/TokenUtil");
+const mailUtil = require("../util/MailUtil");
 
 
 
@@ -119,6 +120,15 @@ const addUserwithEnc = async(req,res)=>{
     const user = new userSchema(userObj);
     var token = tokenUtil.generateToken(user.toObject());
     user.save().then((data)=>{
+
+        //mail
+
+        mailUtil.sendMail(req.body.email,"Welcome to our app","This is test mail from nodejs").then((data)=>{
+            console.log(data);
+        }).catch((err)=>{
+            console.log(err);
+        })
+        
         res.status(201).json({
             message:"user added",
             data:token

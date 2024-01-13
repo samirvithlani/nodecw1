@@ -37,7 +37,8 @@ async function uploadFile(file){
             'parents':[GOOGLE_DRIVE_FOLDER_ID]
         }
         const media = {
-            mimeType:'image/jpeg || image/png || image/gif',
+            //mimeType:'image/jpeg || image/png || image/gif',
+            mimeType:'application/pdf',
             body:fs.createReadStream(file)
         }
         const response = await driveService.files.create({
