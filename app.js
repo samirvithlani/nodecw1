@@ -5,8 +5,22 @@ const cors = require("cors");
 const userSchema = require("./model/UserModel");
 const PORT = 3001;
 
+const { createProxyMiddleware } = require('http-proxy-middleware');
+  const driveProxy = createProxyMiddleware({
+    target: 'https://drive.google.com',
+    changeOrigin: true,
+    pathRewrite: {
+      '^/api/drive/(.*)': '/uc?export=view&id=$1&sz=SIZE',
+    },
+  });
+  app.use('/api/drive', driveProxy);
+
 app.use(express.json());
 app.use(cors()); //allow all origins
+
+
+
+
 
 
 const userRoutes = require("./routes/UserRoutes");
@@ -19,6 +33,7 @@ app.use('/category',categoryRoutes);
 app.use('/product',productRoutes);
 app.use('/file',fileUploadRoutes);
 app.use('/book',bookRoutes);
+
 
 mongoose.connect("mongodb://127.0.0.1:27017/cw1", {
   useNewUrlParser: true,

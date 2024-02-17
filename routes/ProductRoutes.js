@@ -6,4 +6,5 @@ router.get('/product',productController.getProduct);
 router.put('/addvarient/:id',productController.addVaeiantToProduct)
 router.put('/removevarient/:id',productController.removeVariantFromProduct)
 router.get('/product/:status',productController.getProductByStatus)
+router.get('/productfil/:price',productController.productLessThenParam)
 module.exports = router;

@@ -1,5 +1,18 @@
 const productSchema = require("../model/ProductModel");
 
+const productLessThenParam = async (req, res) => {
+
+  const price = req.params.price;
+  const products = await productSchema.find({price:{$lte:price}}).populate("category");
+  res.status(200).json({
+    message: "Products fetched successfully",
+    data: products,
+  })
+
+
+
+}
+
 const addProduct = async (req, res) => {
   const product = new productSchema(req.body);
   const result = await product.save();
@@ -92,5 +105,6 @@ module.exports = {
   getProduct,
     addVaeiantToProduct,
     removeVariantFromProduct,
-    getProductByStatus
+    getProductByStatus,
+    productLessThenParam
 };
